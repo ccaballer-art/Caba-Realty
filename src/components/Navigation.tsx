@@ -10,6 +10,7 @@ const navLinks = [
   { href: "/propiedades", label: "Propiedades" },
   { href: "/vendedores", label: "Vendedores" },
   { href: "/herederos", label: "Herederos" },
+  { href: "/compradores", label: "Compradores" },
   { href: "/comercial", label: "Comercial" },
   { href: "/contacto", label: "Contacto" },
 ];

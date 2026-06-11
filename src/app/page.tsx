@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import SellerSituations from "@/components/SellerSituations";
 import SellerLeadForm from "@/components/SellerLeadForm";
 import SellerFAQ from "@/components/SellerFAQ";
+import BuyerSection from "@/components/BuyerSection";
 import type { Metadata } from "next";
 import { COMPANY_NAME } from "@/lib/constants";
 
@@ -31,6 +32,7 @@ export default function HomePage() {
         </div>
       </section>
       <SellerFAQ />
+      <BuyerSection />
     </>
   );
 }

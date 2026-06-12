@@ -1,10 +1,6 @@
 import { type ReactNode } from "react";
 
-type BuyerSituation = {
-  icon: ReactNode;
-  title: string;
-  description: string;
-};
+type BuyerSituation = { icon: ReactNode; title: string; description: string };
 
 const situations: BuyerSituation[] = [
   {
@@ -14,8 +10,7 @@ const situations: BuyerSituation[] = [
       </svg>
     ),
     title: "Primera vivienda",
-    description:
-      "Si vas a comprar tu primera propiedad, podemos orientarte sobre el proceso paso a paso para que tomes una decisión informada.",
+    description: "Si vas a comprar tu primera propiedad, podemos orientarte sobre el proceso paso a paso para que tomes una decisión informada.",
   },
   {
     icon: (
@@ -24,8 +19,7 @@ const situations: BuyerSituation[] = [
       </svg>
     ),
     title: "Propiedad de inversión",
-    description:
-      "Si buscas una propiedad como inversión, podemos analizar opciones según tu presupuesto y los objetivos que tienes en mente.",
+    description: "Si buscas una propiedad como inversión, podemos analizar opciones según tu presupuesto y los objetivos que tienes en mente.",
   },
   {
     icon: (
@@ -35,8 +29,7 @@ const situations: BuyerSituation[] = [
       </svg>
     ),
     title: "Relocalización a Puerto Rico",
-    description:
-      "Si te estás mudando a Puerto Rico, podemos ayudarte a entender el mercado local y encontrar una propiedad que se ajuste a tus necesidades.",
+    description: "Si te estás mudando a Puerto Rico, podemos ayudarte a entender el mercado local y encontrar una propiedad que se ajuste a tus necesidades.",
   },
 ];
 
@@ -60,10 +53,7 @@ export default function BuyerSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
           {situations.map((situation, index) => (
-            <div
-              key={index}
-              className="bg-white border border-gray-200 rounded-xl p-5"
-            >
+            <div key={index} className="bg-white border border-gray-200 rounded-xl p-5">
               <div className="w-10 h-10 bg-navy-50 rounded-lg flex items-center justify-center text-navy-700 mb-3">
                 {situation.icon}
               </div>

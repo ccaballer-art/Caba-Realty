@@ -1,7 +1,4 @@
-"use client";
-
 import { useState, type FormEvent } from "react";
-import type { LeadPayload } from "@/app/api/leads/route";
 
 type FormState = {
   nombre: string;
@@ -55,7 +52,7 @@ export default function SellerLeadForm() {
 
     setStatus("submitting");
 
-    const payload: LeadPayload = {
+    const payload = {
       nombre: form.nombre.trim(),
       telefono: form.telefono.trim(),
       email: form.email.trim(),
@@ -64,19 +61,22 @@ export default function SellerLeadForm() {
       source: "homepage",
     };
 
+    const apiUrl = import.meta.env.VITE_LEADS_API_URL;
+
     try {
-      const res = await fetch("/api/leads", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      const data = await res.json();
-      if (res.ok && data.success) {
-        setStatus("success");
-        setForm(initialState);
+      if (apiUrl) {
+        const res = await fetch(apiUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        if (!res.ok) throw new Error("API error");
       } else {
-        setStatus("error");
+        // No API configured — log for development
+        console.log("[Lead]", payload);
       }
+      setStatus("success");
+      setForm(initialState);
     } catch {
       setStatus("error");
     }
@@ -96,19 +96,8 @@ export default function SellerLeadForm() {
     return (
       <div className="bg-white rounded-xl border border-green-200 p-8 text-center shadow-sm">
         <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg
-            className="h-6 w-6 text-green-600"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-            aria-hidden="true"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M5 13l4 4L19 7"
-            />
+          <svg className="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
         <h3 className="text-lg font-semibold text-gray-900 mb-2">
@@ -236,10 +225,7 @@ export default function SellerLeadForm() {
       </div>
 
       {status === "error" && (
-        <p
-          className="mt-4 text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-3"
-          role="alert"
-        >
+        <p className="mt-4 text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-3" role="alert">
           Hubo un error al enviar tu información. Por favor intenta nuevamente o
           contáctame directamente por WhatsApp.
         </p>
@@ -254,8 +240,7 @@ export default function SellerLeadForm() {
       </button>
 
       <p className="mt-4 text-xs text-gray-500 text-center">
-        Me comunicaré contigo para entender tu situación y discutir próximos
-        pasos.
+        Me comunicaré contigo para entender tu situación y discutir próximos pasos.
       </p>
     </form>
   );

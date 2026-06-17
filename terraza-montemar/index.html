@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Terraza Montemar Restaurant — La Casa del Chillo Frito. Mariscos y cocina criolla puertorriqueña en Río Grande, PR. Vista al Atlántico y al Wyndham Rio Mar.">
+<meta property="og:title" content="Terraza Montemar Restaurant · Río Grande, Puerto Rico">
+<meta property="og:description" content="Más de 30 años de sabor boricua sobre el Atlántico. Mariscos frescos, mofongo y cocina criolla.">
+<title>Terraza Montemar Restaurant · Río Grande, Puerto Rico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --white:   #ffffff;
+  --offwhite:#f7fafd;
+  --sky:     #cce8f6;
+  --sky2:    #a8d8f0;
+  --blue:    #4aa8d8;
+  --deep:    #1a6a9a;
+  --navy:    #0d3d5e;
+  --coral:   #e8604a;
+  --text:    #1a2e3d;
+  --muted:   #6a8599;
+  --gold:    #d4a843;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Outfit',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden}
+h1,h2,h3,.editorial{font-family:'Cormorant Garamond',serif}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+/* ── NAV ── */
+#nav{position:fixed;top:0;left:0;width:100%;z-index:999;padding:22px 5vw;display:flex;align-items:center;justify-content:space-between;transition:background .35s,padding .35s,box-shadow .35s}
+#nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(0,0,0,.07);padding:14px 5vw}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo img{height:46px;width:auto;transition:height .35s}
+#nav.scrolled .nav-logo img{height:38px}
+.nav-logo-text{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:#fff;transition:color .35s;line-height:1.1;letter-spacing:.01em}
+#nav.scrolled .nav-logo-text{color:var(--navy)}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{font-size:.85rem;font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.9);transition:color .2s}
+#nav.scrolled .nav-links a{color:var(--navy)}
+.nav-links a:hover{color:var(--sky2)}
+#nav.scrolled .nav-links a:hover{color:var(--blue)}
+.btn-reservar{background:var(--coral);color:#fff !important;padding:10px 22px;border-radius:60px;font-size:.82rem;font-weight:500;letter-spacing:.05em;transition:background .2s,transform .15s}
+.btn-reservar:hover{background:#cf4d38;transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+#nav.scrolled .hamburger span{background:var(--navy)}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+#mobile-menu{display:none;position:fixed;inset:0;background:var(--navy);z-index:998;flex-direction:column;align-items:center;justify-content:center;gap:32px}
+#mobile-menu.open{display:flex}
+#mobile-menu a{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:rgba(255,255,255,.85);letter-spacing:.04em;transition:color .2s}
+#mobile-menu a:hover{color:var(--sky2)}
+#mobile-menu .btn-reservar{font-family:'Outfit',sans-serif;font-size:1rem;margin-top:8px}
+
+/* ── HERO ── */
+#hero{position:relative;height:100vh;min-height:580px;display:flex;align-items:flex-end;background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1800&q=85') center/cover no-repeat;overflow:hidden}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,61,94,.72) 0%,rgba(13,61,94,.35) 55%,rgba(13,61,94,.1) 100%)}
+.hero-content{position:relative;z-index:2;padding:0 7vw 9vh;max-width:680px}
+.hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.hero-eyebrow span{display:block;width:36px;height:1px;background:var(--sky2)}
+.hero-eyebrow p{font-size:.78rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--sky2)}
+.hero-content h1{font-size:clamp(3rem,7vw,6rem);font-weight:300;color:#fff;line-height:1.05;margin-bottom:20px}
+.hero-content h1 em{font-style:italic;color:var(--sky2)}
+.hero-content p{font-size:1.05rem;color:rgba(255,255,255,.8);font-weight:300;max-width:440px;line-height:1.65;margin-bottom:32px}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn-primary{background:var(--sky2);color:var(--navy);padding:14px 30px;border-radius:60px;font-size:.9rem;font-weight:500;letter-spacing:.04em;transition:background .2s,transform .15s}
+.btn-primary:hover{background:var(--blue);color:#fff;transform:translateY(-2px)}
+.btn-ghost{color:#fff;padding:14px 30px;border-radius:60px;border:1.5px solid rgba(255,255,255,.45);font-size:.9rem;font-weight:400;letter-spacing:.04em;transition:all .2s}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.scroll-indicator{position:absolute;right:32px;bottom:40px;display:flex;flex-direction:column;align-items:center;gap:10px;z-index:2}
+.scroll-indicator .line{width:1px;height:60px;background:rgba(255,255,255,.4);animation:scrollPulse 2s infinite}
+.scroll-indicator p{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);writing-mode:vertical-rl}
+@keyframes scrollPulse{0%,100%{opacity:.4}50%{opacity:1}}
+.hero-wave{position:absolute;bottom:-1px;left:0;width:100%;z-index:3}
+
+/* ── STRIP ── */
+#strip{background:var(--white);border-bottom:1px solid var(--sky);padding:28px 7vw}
+.strip-inner{display:flex;align-items:center;justify-content:center;gap:0}
+.strip-item{flex:1;text-align:center;padding:12px 20px;border-right:1px solid var(--sky)}
+.strip-item:last-child{border-right:none}
+.strip-num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:400;color:var(--deep);line-height:1}
+.strip-label{font-size:.72rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+
+/* ── INTRO ── */
+#intro{padding:100px 7vw;background:var(--white)}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.intro-label{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.intro-label::before{content:'';display:block;width:28px;height:1px;background:var(--blue)}
+.intro-left h2{font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:300;line-height:1.15;color:var(--navy)}
+.intro-right p{font-size:1rem;line-height:1.75;color:var(--muted);margin-bottom:20px;font-weight:300}
+.intro-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.tag{display:inline-block;padding:7px 18px;border-radius:60px;border:1px solid var(--sky2);color:var(--deep);font-size:.8rem;font-weight:400;letter-spacing:.04em}
+
+/* ── FULLBLEED QUOTE ── */
+#quote-section{position:relative;height:85vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:url('https://images.unsplash.com/photo-1544025162-d76694265947?w=1800&q=85') center/cover no-repeat;transition:transform .6s}
+#quote-section:hover{transform:scale(1.01)}
+.quote-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(13,61,94,.78),rgba(13,61,94,.55))}
+.quote-inner{position:relative;z-index:2;max-width:700px;padding:0 7vw;text-align:center}
+.quote-inner blockquote{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,3.2vw,2.4rem);font-weight:300;font-style:italic;color:#fff;line-height:1.5;border-left:3px solid var(--sky2);padding-left:28px;text-align:left}
+.quote-author{margin-top:20px;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sky2);padding-left:31px}
+
+/* ── VISTAS ── */
+#vistas{padding:100px 7vw;background:var(--offwhite)}
+.vistas-header{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-bottom:52px;align-items:end}
+.vistas-header h2{font-size:clamp(2.2rem,4vw,3.4rem);font-weight:300;color:var(--navy);line-height:1.2}
+.vistas-header p{font-size:.95rem;color:var(--muted);line-height:1.7;font-weight:300}
+.vistas-grid{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:260px 260px;gap:16px}
+.vista-item{position:relative;overflow:hidden;border-radius:4px}
+.vista-item:first-child{grid-row:1/3}
+.vista-item img{width:100%;height:100%;object-fit:cover;filter:saturate(.9);transition:filter .4s,transform .5s}
+.vista-item:hover img{filter:saturate(1.1);transform:scale(1.04)}
+.vista-caption{position:absolute;inset:0;background:rgba(13,61,94,.5);display:flex;align-items:flex-end;padding:20px;opacity:0;transition:opacity .3s}
+.vista-item:hover .vista-caption{opacity:1}
+.vista-caption p{color:#fff;font-size:.85rem;font-weight:400;letter-spacing:.04em}
+
+/* ── MENU ── */
+#menu{padding:100px 7vw;background:var(--white)}
+.menu-header{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-bottom:52px;align-items:end}
+.menu-header h2{font-size:clamp(2.2rem,4vw,3.4rem);font-weight:300;color:var(--navy)}
+.menu-note{font-size:.9rem;color:var(--muted);line-height:1.7;font-weight:300}
+.menu-tabs{display:flex;gap:0;border-bottom:1.5px solid var(--sky);margin-bottom:40px;overflow-x:auto}
+.menu-tab{padding:12px 24px;font-size:.82rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);cursor:pointer;border-bottom:2.5px solid transparent;margin-bottom:-1.5px;transition:color .2s,border-color .2s;white-space:nowrap;background:none;border-top:none;border-left:none;border-right:none;font-family:'Outfit',sans-serif}
+.menu-tab.active{color:var(--deep);border-bottom-color:var(--deep)}
+.menu-tab:hover{color:var(--blue)}
+.menu-panel{display:none}
+.menu-panel.active{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.menu-item{padding:20px 16px;border-bottom:1px solid rgba(204,232,246,.6);transition:background .2s;cursor:pointer;position:relative}
+.menu-item:hover{background:var(--offwhite)}
+.menu-item-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;color:var(--navy);margin-bottom:4px}
+.menu-item-desc{font-size:.78rem;color:var(--muted);line-height:1.5;font-weight:300;margin-bottom:8px}
+.menu-item-footer{display:flex;align-items:center;justify-content:space-between}
+.menu-item-price{font-size:.9rem;color:var(--blue);font-weight:500}
+.add-btn{background:none;border:1px solid var(--sky2);color:var(--deep);width:28px;height:28px;border-radius:50%;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+.add-btn:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+
+/* ── RESEÑAS ── */
+#resenas{padding:80px 0;background:var(--sky)}
+.resenas-header{display:flex;align-items:center;justify-content:space-between;padding:0 7vw;margin-bottom:40px}
+.resenas-header h2{font-size:clamp(2rem,3.5vw,3rem);font-weight:300;color:var(--navy)}
+.stars{color:var(--gold);font-size:1.4rem;letter-spacing:2px}
+.resenas-track{display:flex;gap:20px;overflow-x:auto;padding:0 7vw 16px;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none}
+.resenas-track::-webkit-scrollbar{display:none}
+.resena-card{flex:0 0 340px;background:var(--white);border-radius:6px;padding:36px 30px;scroll-snap-align:start;position:relative;overflow:hidden}
+.resena-quote-bg{position:absolute;top:-10px;left:10px;font-family:'Cormorant Garamond',serif;font-size:8rem;color:var(--sky);line-height:1;pointer-events:none;z-index:0}
+.resena-text{position:relative;z-index:1;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;line-height:1.65;color:var(--text);margin-bottom:20px}
+.resena-author{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* ── CTA RESERVA ── */
+#cta{padding:100px 7vw;background:var(--navy);position:relative;overflow:hidden;text-align:center}
+#cta::before{content:'';position:absolute;top:-200px;left:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(74,168,216,.12) 0%,transparent 70%);pointer-events:none}
+#cta::after{content:'';position:absolute;bottom:-150px;right:-150px;width:500px;height:500px;background:radial-gradient(circle,rgba(204,232,246,.08) 0%,transparent 70%);pointer-events:none}
+.cta-inner{position:relative;z-index:2;max-width:680px;margin:0 auto}
+#cta h2{font-size:clamp(2.4rem,5vw,4rem);font-weight:300;color:#fff;line-height:1.15;margin-bottom:16px}
+#cta h2 em{font-style:italic;color:var(--sky2)}
+#cta p{font-size:.95rem;color:rgba(255,255,255,.65);margin-bottom:40px;font-weight:300}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-sky{background:var(--sky2);color:var(--navy);padding:14px 28px;border-radius:60px;font-size:.9rem;font-weight:500;letter-spacing:.04em;transition:all .2s}
+.btn-sky:hover{background:var(--blue);color:#fff;transform:translateY(-2px)}
+.btn-outline-sky{color:var(--sky2);padding:14px 28px;border-radius:60px;border:1.5px solid rgba(168,216,240,.4);font-size:.9rem;font-weight:400;letter-spacing:.04em;transition:all .2s}
+.btn-outline-sky:hover{border-color:var(--sky2);background:rgba(168,216,240,.08)}
+
+/* ── UBICACION ── */
+#ubicacion{padding:100px 7vw;background:var(--offwhite)}
+.ubicacion-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start}
+.info-row{padding:18px 0;border-top:1px solid rgba(204,232,246,.7);display:flex;gap:16px}
+.info-row:first-child{border-top:none}
+.info-icon{color:var(--blue);font-size:1.1rem;flex-shrink:0;margin-top:1px}
+.info-label{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.info-value{font-size:.92rem;color:var(--text);line-height:1.55;font-weight:300}
+.social-btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.btn-social{padding:9px 20px;border-radius:60px;border:1px solid var(--sky2);color:var(--deep);font-size:.8rem;font-weight:400;letter-spacing:.04em;transition:all .2s}
+.btn-social:hover{background:var(--sky);border-color:var(--blue)}
+.map-wrap iframe{width:100%;height:420px;border:none;border-radius:6px;box-shadow:0 4px 24px rgba(13,61,94,.1)}
+
+/* ── FOOTER ── */
+#footer{background:var(--navy);padding:60px 7vw 32px}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;margin-bottom:40px}
+.footer-logo img{height:52px;filter:brightness(0) invert(1);opacity:.85}
+.footer-logo p{font-size:.78rem;color:rgba(255,255,255,.45);margin-top:12px;line-height:1.6;font-weight:300}
+.footer-col h4{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sky2);margin-bottom:14px}
+.footer-col p,.footer-col a{font-size:.82rem;color:rgba(255,255,255,.55);line-height:1.7;display:block;font-weight:300;transition:color .2s}
+.footer-col a:hover{color:var(--sky2)}
+.footer-divider{border:none;border-top:1px solid rgba(255,255,255,.08);margin-bottom:20px}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;font-size:.75rem;color:rgba(255,255,255,.3)}
+
+/* ── CART ── */
+#cart-btn{position:fixed;bottom:28px;right:28px;z-index:900;background:var(--coral);color:#fff;width:58px;height:58px;border-radius:50%;border:none;cursor:pointer;font-size:1.4rem;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(232,96,74,.4);transition:transform .2s;display:none}
+#cart-btn:hover{transform:scale(1.08)}
+#cart-count{position:absolute;top:-4px;right:-4px;background:var(--navy);color:#fff;font-size:.65rem;font-weight:500;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+#cart-drawer{position:fixed;right:-420px;top:0;width:420px;max-width:95vw;height:100%;background:#fff;z-index:1000;box-shadow:-4px 0 40px rgba(0,0,0,.15);transition:right .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column}
+#cart-drawer.open{right:0}
+.cart-header{padding:24px 20px;border-bottom:1px solid var(--sky);display:flex;align-items:center;justify-content:space-between}
+.cart-header h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--navy)}
+.cart-close{background:none;border:none;font-size:1.5rem;color:var(--muted);cursor:pointer;padding:4px}
+.cart-body{flex:1;overflow-y:auto;padding:16px 20px}
+.cart-empty{text-align:center;padding:60px 20px;color:var(--muted);font-size:.9rem}
+.cart-item{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--offwhite)}
+.cart-item-info{flex:1}
+.cart-item-name{font-size:.9rem;font-weight:400;color:var(--text)}
+.cart-item-price{font-size:.8rem;color:var(--blue)}
+.cart-item-controls{display:flex;align-items:center;gap:8px}
+.qty-btn{background:var(--offwhite);border:none;width:26px;height:26px;border-radius:50%;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;color:var(--navy);transition:background .2s}
+.qty-btn:hover{background:var(--sky)}
+.qty-num{font-size:.85rem;min-width:16px;text-align:center}
+.cart-footer{padding:20px;border-top:1px solid var(--sky)}
+.cart-total{display:flex;justify-content:space-between;margin-bottom:16px;font-size:.95rem;font-weight:400;color:var(--navy)}
+.cart-total span:last-child{font-weight:500;color:var(--deep)}
+.btn-whatsapp{width:100%;padding:14px;background:#25D366;color:#fff;border:none;border-radius:60px;font-size:.9rem;font-weight:500;cursor:pointer;letter-spacing:.04em;transition:background .2s;font-family:'Outfit',sans-serif}
+.btn-whatsapp:hover{background:#1ebe5d}
+#cart-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:999}
+#cart-overlay.open{display:block}
+
+/* ── RESERVATION MODAL ── */
+#resv-modal{display:none;position:fixed;inset:0;z-index:1001;align-items:center;justify-content:center;padding:20px}
+#resv-modal.open{display:flex}
+.modal-overlay{position:absolute;inset:0;background:rgba(13,61,94,.7);backdrop-filter:blur(4px)}
+.modal-box{position:relative;z-index:2;background:#fff;border-radius:8px;padding:40px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto}
+.modal-box h3{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--navy);margin-bottom:6px}
+.modal-box p.modal-sub{font-size:.83rem;color:var(--muted);margin-bottom:28px;font-weight:300}
+.form-row{margin-bottom:18px}
+.form-row label{display:block;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.form-row input,.form-row select,.form-row textarea{width:100%;padding:11px 14px;border:1.5px solid var(--sky);border-radius:4px;font-family:'Outfit',sans-serif;font-size:.9rem;color:var(--text);background:var(--offwhite);outline:none;transition:border-color .2s}
+.form-row input:focus,.form-row select:focus,.form-row textarea:focus{border-color:var(--blue);background:#fff}
+.form-row textarea{resize:vertical;min-height:80px}
+.form-grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.btn-resv-submit{width:100%;padding:14px;background:var(--coral);color:#fff;border:none;border-radius:60px;font-size:.9rem;font-weight:500;cursor:pointer;font-family:'Outfit',sans-serif;transition:background .2s;margin-top:8px}
+.btn-resv-submit:hover{background:#cf4d38}
+.modal-close-btn{position:absolute;top:16px;right:16px;background:none;border:none;font-size:1.4rem;color:var(--muted);cursor:pointer}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .intro-grid,.menu-header,.vistas-header,.ubicacion-grid,.menu-panel.active{grid-template-columns:1fr}
+  .intro-grid{gap:40px}
+  .vistas-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .vistas-grid .vista-item:first-child{grid-row:auto}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  #cart-drawer{width:100%;right:-100%}
+}
+@media(max-width:600px){
+  #strip .strip-inner{flex-wrap:wrap}
+  .strip-item{min-width:50%;border-right:none;border-bottom:1px solid var(--sky)}
+  .menu-panel.active{grid-template-columns:1fr}
+  .vistas-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .resena-card{flex:0 0 88vw}
+  .form-grid2{grid-template-columns:1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo">
+    <img src="data:image/png;base64,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" alt="Terraza Montemar Logo">
+  </div>
+  <ul class="nav-links">
+    <li><a href="#intro">Nosotros</a></li>
+    <li><a href="#vistas">Las Vistas</a></li>
+    <li><a href="#menu">Menú</a></li>
+    <li><a href="#resenas">Reseñas</a></li>
+    <li><a href="#ubicacion">Ubicación</a></li>
+    <li><a href="#" class="btn-reservar" onclick="openReserva(event)">Reservar</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu">
+  <a href="#intro" onclick="closeMenu()">Nosotros</a>
+  <a href="#vistas" onclick="closeMenu()">Las Vistas</a>
+  <a href="#menu" onclick="closeMenu()">Menú</a>
+  <a href="#resenas" onclick="closeMenu()">Reseñas</a>
+  <a href="#ubicacion" onclick="closeMenu()">Ubicación</a>
+  <a href="#" class="btn-reservar" onclick="openReserva(event);closeMenu()">Reservar Mesa</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span></span>
+      <p>Río Grande, Puerto Rico · Desde los años 90</p>
+    </div>
+    <h1>Donde el mar<br>te <em>abraza</em></h1>
+    <p>Mariscos frescos, mofongo glorioso y la vista más linda de Río Grande — con el Atlántico de frente y el Wyndham Rio Mar abajo.</p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn-primary">Ver el Menú</a>
+      <a href="#vistas" class="btn-ghost">Explorar las vistas →</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <div class="line"></div>
+    <p>Scroll</p>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,40 C360,0 1080,80 1440,20 L1440,60 L0,60 Z" fill="#ffffff"/>
+  </svg>
+</section>
+
+<!-- STRIP -->
+<div id="strip">
+  <div class="strip-inner">
+    <div class="strip-item">
+      <div class="strip-num">4.5★</div>
+      <div class="strip-label">Google Rating</div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-num">100%</div>
+      <div class="strip-label">Recomendado Facebook</div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-num">30+</div>
+      <div class="strip-label">Años de experiencia</div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-num">#18</div>
+      <div class="strip-label">de 110 en Río Grande</div>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section id="intro">
+  <div class="intro-grid">
+    <div class="intro-left">
+      <div class="intro-label">Nuestra historia</div>
+      <h2>Un rincón boricua<br>sobre el Atlántico</h2>
+    </div>
+    <div class="intro-right">
+      <p>Terraza Montemar nació hace más de tres décadas en una colina privilegiada de Río Grande, Puerto Rico — con el océano Atlántico a los pies y el Wyndham Rio Mar Resort como vecino. Lo que comenzó como un sueño familiar se convirtió en uno de los restaurantes más queridos de la isla.</p>
+      <p>Nuestra cocina honra la tradición criolla puertorriqueña con mariscos frescos del día, mofongos rellenos que se han vuelto leyenda, y la famosa salsa picante casera que nuestros clientes llevan décadas pidiendo en secreto.</p>
+      <div class="intro-tags">
+        <span class="tag">Mariscos Frescos</span>
+        <span class="tag">Vista al Atlántico</span>
+        <span class="tag">Cocina Criolla</span>
+        <span class="tag">Música en Vivo</span>
+        <span class="tag">Familia Bienvenida</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FULLBLEED QUOTE -->
+<section id="quote-section">
+  <div class="quote-overlay"></div>
+  <div class="quote-inner">
+    <blockquote>"La vista no tiene comparación. El Atlántico de frente y el Rio Mar abajo. La langosta con mofongo fue increíble — una experiencia que no se repite en ningún otro lugar de Puerto Rico."</blockquote>
+    <p class="quote-author">— David K., Yelp</p>
+  </div>
+</section>
+
+<!-- VISTAS -->
+<section id="vistas">
+  <div class="vistas-header">
+    <h2>Las Vistas<br>que te conquistan</h2>
+    <p>Desde nuestra terraza en la colina, cada mesa ofrece una perspectiva diferente del Atlántico y los jardines del Rio Mar. Ven temprano y quédate para el atardecer.</p>
+  </div>
+  <div class="vistas-grid">
+    <div class="vista-item">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80" alt="Vista al Atlántico" loading="lazy">
+      <div class="vista-caption"><p>Vista al Atlántico desde la terraza</p></div>
+    </div>
+    <div class="vista-item">
+      <img src="assets/food1.jpeg" alt="Platos de Terraza Montemar" loading="lazy">
+      <div class="vista-caption"><p>Mofongo de mariscos con tostones</p></div>
+    </div>
+    <div class="vista-item">
+      <img src="assets/food2.jpeg" alt="Mesa compartida" loading="lazy">
+      <div class="vista-caption"><p>Festín criollo para compartir</p></div>
+    </div>
+    <div class="vista-item">
+      <img src="assets/food3.jpeg" alt="Churrasco con camarones" loading="lazy">
+      <div class="vista-caption"><p>Churrasco con camarones al ajillo</p></div>
+    </div>
+    <div class="vista-item">
+      <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80" alt="Ambiente del restaurante" loading="lazy">
+      <div class="vista-caption"><p>Ambiente íntimo en la terraza</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="menu-header">
+    <div>
+      <div class="intro-label">La Carta</div>
+      <h2>Nuestro Menú</h2>
+    </div>
+    <p class="menu-note">Todos los mariscos vienen con dos acompañantes a elegir: tostones, amarillos, arroz, habichuelas o ensalada. Precios sujetos a cambio según temporada.</p>
+  </div>
+  <div class="menu-tabs">
+    <button class="menu-tab active" onclick="showTab('mariscos',this)">Mariscos</button>
+    <button class="menu-tab" onclick="showTab('mofongo',this)">Mofongo</button>
+    <button class="menu-tab" onclick="showTab('arroces',this)">Arroces & Asopao</button>
+    <button class="menu-tab" onclick="showTab('carnes',this)">Carnes</button>
+    <button class="menu-tab" onclick="showTab('aperitivos',this)">Aperitivos</button>
+    <button class="menu-tab" onclick="showTab('postres',this)">Postres & Bebidas</button>
+  </div>
+
+  <!-- MARISCOS -->
+  <div id="tab-mariscos" class="menu-panel active">
+    <div class="menu-item" onclick="addToCart('Carrucho (Conch)',25)">
+      <div class="menu-item-name">Carrucho</div>
+      <div class="menu-item-desc">Conch preparado al estilo criollo · con acompañantes</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$25.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Carrucho',25)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Pulpo',22)">
+      <div class="menu-item-name">Pulpo</div>
+      <div class="menu-item-desc">Octopus fresco al ajillo o criollo · con acompañantes</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$22.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Pulpo',22)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Camarones',19.95)">
+      <div class="menu-item-name">Camarones</div>
+      <div class="menu-item-desc">Shrimp al ajillo, criolla o enchilados · con acompañantes</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$19.95</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Camarones',19.95)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Mero',22)">
+      <div class="menu-item-name">Mero</div>
+      <div class="menu-item-desc">Grouper fresco al gusto del chef · con acompañantes</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$22.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Mero',22)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Filete de Chillo',18.95)">
+      <div class="menu-item-name">Filete de Chillo</div>
+      <div class="menu-item-desc">Red snapper fillet a la plancha · con acompañantes</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$18.95</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Filete de Chillo',18.95)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Filete de Mero',16.65)">
+      <div class="menu-item-name">Filete de Mero</div>
+      <div class="menu-item-desc">Grouper fillet a la plancha o frito · con acompañantes</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$16.65</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Filete de Mero',16.65)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Salmejo de Jueyes',17.95)">
+      <div class="menu-item-name">Salmejo de Jueyes</div>
+      <div class="menu-item-desc">Crab meat criollo · con acompañantes</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$17.95</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Salmejo de Jueyes',17.95)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Langosta Entera',0)">
+      <div class="menu-item-name">Langosta Entera</div>
+      <div class="menu-item-desc">Whole lobster — mantequilla, ajillo o criolla · con acompañantes</div>
+      <div class="menu-item-footer"><span class="menu-item-price">Precio de mercado</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Langosta Entera',0)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Pescado del Día',0)">
+      <div class="menu-item-name">Pescado del Día</div>
+      <div class="menu-item-desc">Catch of the day · con acompañantes</div>
+      <div class="menu-item-footer"><span class="menu-item-price">Precio de mercado</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Pescado del Día',0)">+</button></div>
+    </div>
+  </div>
+
+  <!-- MOFONGO -->
+  <div id="tab-mofongo" class="menu-panel">
+    <div class="menu-item" onclick="addToCart('Mofongo Relleno de Pollo',16)">
+      <div class="menu-item-name">Relleno de Pollo</div>
+      <div class="menu-item-desc">Mofongo tradicional relleno de pollo guisado</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$16.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Mofongo Relleno de Pollo',16)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Mofongo Relleno de Bistec',14.65)">
+      <div class="menu-item-name">Relleno de Bistec</div>
+      <div class="menu-item-desc">Con bistec encebollado a la criolla</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$14.65</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Mofongo Relleno de Bistec',14.65)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Mofongo Relleno de Churrasco',24.95)">
+      <div class="menu-item-name">Relleno de Churrasco</div>
+      <div class="menu-item-desc">Con churrasco al término preferido</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$24.95</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Mofongo Relleno de Churrasco',24.95)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Mofongo Relleno de Carne Frita',14.95)">
+      <div class="menu-item-name">Relleno de Carne Frita</div>
+      <div class="menu-item-desc">Con carne frita criolla</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$14.95</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Mofongo Relleno de Carne Frita',14.95)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Mofongo Relleno de Camarones',21.95)">
+      <div class="menu-item-name">Relleno de Camarones</div>
+      <div class="menu-item-desc">Shrimp al ajillo o en salsa criolla</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$21.95</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Mofongo Relleno de Camarones',21.95)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Mofongo Relleno de Pulpo',23)">
+      <div class="menu-item-name">Relleno de Pulpo</div>
+      <div class="menu-item-desc">Octopus guisado al ajillo</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$23.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Mofongo Relleno de Pulpo',23)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Mofongo Relleno de Carrucho',27)">
+      <div class="menu-item-name">Relleno de Carrucho</div>
+      <div class="menu-item-desc">Conch guisado al estilo criollo</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$27.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Mofongo Relleno de Carrucho',27)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Mofongo Relleno de Chillo',20.95)">
+      <div class="menu-item-name">Relleno de Chillo</div>
+      <div class="menu-item-desc">Red snapper en salsa criolla</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$20.95</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Mofongo Relleno de Chillo',20.95)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Mofongo Relleno de Mero',18.95)">
+      <div class="menu-item-name">Relleno de Mero</div>
+      <div class="menu-item-desc">Grouper al estilo criollo</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$18.95</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Mofongo Relleno de Mero',18.95)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Mofongo Relleno de Salmejo',19.95)">
+      <div class="menu-item-name">Relleno de Salmejo</div>
+      <div class="menu-item-desc">Crab meat al ajillo</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$19.95</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Mofongo Relleno de Salmejo',19.95)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Mofongo Relleno de Marisco Mixto',24)">
+      <div class="menu-item-name">Relleno de Marisco Mixto</div>
+      <div class="menu-item-desc">Mix de mariscos: camarones, pulpo, carrucho</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$24.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Mofongo Relleno de Marisco Mixto',24)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Mofongo Relleno de Langosta',32)">
+      <div class="menu-item-name">Relleno de Langosta</div>
+      <div class="menu-item-desc">Lobster al ajillo o mantequilla — la estrella de la casa</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$32.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Mofongo Relleno de Langosta',32)">+</button></div>
+    </div>
+  </div>
+
+  <!-- ARROCES & ASOPAO -->
+  <div id="tab-arroces" class="menu-panel">
+    <div class="menu-item"><div class="menu-item-name" style="color:var(--blue);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;font-family:'Outfit',sans-serif;font-weight:500">Arroces / Rice</div></div>
+    <div class="menu-item" onclick="addToCart('Arroz con Langosta',28.95)">
+      <div class="menu-item-name">Arroz con Langosta</div>
+      <div class="menu-item-desc">Lobster rice al estilo criollo</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$28.95</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Arroz con Langosta',28.95)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Arroz con Camarones',16)">
+      <div class="menu-item-name">Arroz con Camarones</div>
+      <div class="menu-item-desc">Shrimp rice con sofrito</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$16.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Arroz con Camarones',16)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Arroz con Mariscos',22)">
+      <div class="menu-item-name">Arroz con Mariscos</div>
+      <div class="menu-item-desc">Seafood rice — mix de mariscos frescos</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$22.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Arroz con Mariscos',22)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Arroz con Carrucho',22.95)">
+      <div class="menu-item-name">Arroz con Carrucho</div>
+      <div class="menu-item-desc">Conch rice criollo</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$22.95</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Arroz con Carrucho',22.95)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Arroz con Pulpo',18)">
+      <div class="menu-item-name">Arroz con Pulpo</div>
+      <div class="menu-item-desc">Octopus rice con recao y ajo</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$18.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Arroz con Pulpo',18)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Arroz con Pescado',16)">
+      <div class="menu-item-name">Arroz con Pescado</div>
+      <div class="menu-item-desc">Fish rice del día</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$16.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Arroz con Pescado',16)">+</button></div>
+    </div>
+    <div class="menu-item"><div class="menu-item-name" style="color:var(--blue);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;font-family:'Outfit',sans-serif;font-weight:500;margin-top:8px">Asopao / Rice Soup</div></div>
+    <div class="menu-item" onclick="addToCart('Asopao de Langosta',28.95)">
+      <div class="menu-item-name">Asopao de Langosta</div>
+      <div class="menu-item-desc">Lobster rice soup — guiso criollo con sofrito</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$28.95</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Asopao de Langosta',28.95)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Asopao de Camarones',16)">
+      <div class="menu-item-name">Asopao de Camarones</div>
+      <div class="menu-item-desc">Shrimp rice soup al estilo criollo</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$16.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Asopao de Camarones',16)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Asopao de Mariscos',22)">
+      <div class="menu-item-name">Asopao de Mariscos</div>
+      <div class="menu-item-desc">Seafood rice soup — mix de mariscos</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$22.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Asopao de Mariscos',22)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Asopao de Pollo',14)">
+      <div class="menu-item-name">Asopao de Pollo</div>
+      <div class="menu-item-desc">Chicken rice soup — clásico puertorriqueño</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$14.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Asopao de Pollo',14)">+</button></div>
+    </div>
+  </div>
+
+  <!-- CARNES -->
+  <div id="tab-carnes" class="menu-panel">
+    <div class="menu-item" onclick="addToCart('Churrasco',22.95)">
+      <div class="menu-item-name">Churrasco</div>
+      <div class="menu-item-desc">Súper tierno al término preferido · con acompañantes</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$22.95</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Churrasco',22.95)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('T-Bone',20)">
+      <div class="menu-item-name">T-Bone</div>
+      <div class="menu-item-desc">Al término preferido · con acompañantes</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$20.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('T-Bone',20)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Pechuga Rellena',14.95)">
+      <div class="menu-item-name">Pechuga Rellena</div>
+      <div class="menu-item-desc">Chicken breast rellena al gusto del chef</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$14.95</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Pechuga Rellena',14.95)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Pechuga de Pollo',14.95)">
+      <div class="menu-item-name">Pechuga de Pollo</div>
+      <div class="menu-item-desc">A la parrilla con arroz, habichuelas y amarillos</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$14.95</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Pechuga de Pollo',14.95)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Chuletas',12.95)">
+      <div class="menu-item-name">Chuletas</div>
+      <div class="menu-item-desc">Pork chops fritas o a la parrilla</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$12.95</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Chuletas',12.95)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Chuletas Can Can',17.95)">
+      <div class="menu-item-name">Chuletas Can Can</div>
+      <div class="menu-item-desc">Corte especial con tostones y pique</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$17.95</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Chuletas Can Can',17.95)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Bistec',12.75)">
+      <div class="menu-item-name">Bistec</div>
+      <div class="menu-item-desc">Encebollado a la criolla</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$12.75</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Bistec',12.75)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Chicharrón de Pollo',12)">
+      <div class="menu-item-name">Chicharrón de Pollo</div>
+      <div class="menu-item-desc">Crispy chicken al estilo puertorriqueño</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$12.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Chicharrón de Pollo',12)">+</button></div>
+    </div>
+  </div>
+
+  <!-- APERITIVOS -->
+  <div id="tab-aperitivos" class="menu-panel">
+    <div class="menu-item" onclick="addToCart('Arañitas Rellenas con Mariscos',18)">
+      <div class="menu-item-name">Arañitas con Mariscos</div>
+      <div class="menu-item-desc">Shredded plantain fritters rellenas de mariscos</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$18.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Arañitas con Mariscos',18)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Arañitas Rellenas con Pollo',13)">
+      <div class="menu-item-name">Arañitas con Pollo</div>
+      <div class="menu-item-desc">Shredded plantain fritters con pollo guisado</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$13.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Arañitas con Pollo',13)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Arañitas de Ropa Vieja',13.95)">
+      <div class="menu-item-name">Arañitas de Ropa Vieja</div>
+      <div class="menu-item-desc">Con ropa vieja criolla</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$13.95</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Arañitas de Ropa Vieja',13.95)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Cóctel de Langosta',18)">
+      <div class="menu-item-name">Cóctel de Langosta</div>
+      <div class="menu-item-desc">Lobster cocktail con salsa especial de la casa</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$18.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Cóctel de Langosta',18)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Cóctel de Pulpo/Camarones',14.95)">
+      <div class="menu-item-name">Cóctel de Pulpo/Camarones</div>
+      <div class="menu-item-desc">Seafood cocktail con limón y pique</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$14.95</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Cóctel de Pulpo/Camarones',14.95)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Empanadillas de Carne',8)">
+      <div class="menu-item-name">Empanadillas de Carne</div>
+      <div class="menu-item-desc">Puerto Rican meat pies fritas</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$8.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Empanadillas de Carne',8)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Empanadillas de Mariscos',8)">
+      <div class="menu-item-name">Empanadillas de Mariscos</div>
+      <div class="menu-item-desc">Seafood-stuffed fried pies</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$8.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Empanadillas de Mariscos',8)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Nuggets de Mero',10)">
+      <div class="menu-item-name">Nuggets de Mero</div>
+      <div class="menu-item-desc">Grouper nuggets fritos con dip</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$10.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Nuggets de Mero',10)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Calamares Fritos',10)">
+      <div class="menu-item-name">Calamares Fritos</div>
+      <div class="menu-item-desc">Fried calamari con salsa de limón</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$10.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Calamares Fritos',10)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Tostones con Ajillo',6)">
+      <div class="menu-item-name">Tostones con Ajillo</div>
+      <div class="menu-item-desc">Double-fried plantains con mojo de ajo de la casa</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$6.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Tostones con Ajillo',6)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Alcapurria de Carne',5)">
+      <div class="menu-item-name">Alcapurria de Carne</div>
+      <div class="menu-item-desc">Yuca & plantain fritter con picadillo</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$5.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Alcapurria de Carne',5)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Surullitos de Maíz',7)">
+      <div class="menu-item-name">Surullitos de Maíz</div>
+      <div class="menu-item-desc">Cornmeal sticks con queso y dip mayo-ketchup</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$7.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Surullitos de Maíz',7)">+</button></div>
+    </div>
+  </div>
+
+  <!-- POSTRES & BEBIDAS -->
+  <div id="tab-postres" class="menu-panel">
+    <div class="menu-item"><div class="menu-item-name" style="color:var(--blue);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;font-family:'Outfit',sans-serif;font-weight:500">Postres / Desserts</div></div>
+    <div class="menu-item" onclick="addToCart('Flan de Diversos Sabores',4)">
+      <div class="menu-item-name">Flan de Diversos Sabores</div>
+      <div class="menu-item-desc">Housemade flan — varios sabores disponibles</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$4.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Flan de Diversos Sabores',4)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Papaya con Queso',4)">
+      <div class="menu-item-name">Papaya con Queso</div>
+      <div class="menu-item-desc">Papaya en almíbar con queso blanco</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$4.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Papaya con Queso',4)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Cascos de Guayaba con Queso',4)">
+      <div class="menu-item-name">Cascos de Guayaba con Queso</div>
+      <div class="menu-item-desc">Guava shells with white cheese — clásico boricua</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$4.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Cascos de Guayaba con Queso',4)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Cheesecake Diversos Sabores',4.50)">
+      <div class="menu-item-name">Cheesecake Diversos Sabores</div>
+      <div class="menu-item-desc">Cheesecake de la casa en varios sabores</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$4.50</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Cheesecake Diversos Sabores',4.50)">+</button></div>
+    </div>
+    <div class="menu-item"><div class="menu-item-name" style="color:var(--blue);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;font-family:'Outfit',sans-serif;font-weight:500;margin-top:8px">Bebidas / Drinks</div></div>
+    <div class="menu-item" onclick="addToCart('Piña Colada Casera',9)">
+      <div class="menu-item-name">Piña Colada Casera</div>
+      <div class="menu-item-desc">Housemade piña colada con ron</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$9.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Piña Colada Casera',9)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Mojito',9)">
+      <div class="menu-item-name">Mojito</div>
+      <div class="menu-item-desc">Clasico cubano con hierbabuena fresca</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$9.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Mojito',9)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Jugos Naturales',5)">
+      <div class="menu-item-name">Jugos Naturales</div>
+      <div class="menu-item-desc">Parcha, tamarindo, china, guayaba — frescos del día</div>
+      <div class="menu-item-footer"><span class="menu-item-price">desde $5.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Jugos Naturales',5)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Coco Frío',6)">
+      <div class="menu-item-name">Coco Frío</div>
+      <div class="menu-item-desc">Natural en el coco — agua de coco fresca</div>
+      <div class="menu-item-footer"><span class="menu-item-price">$6.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Coco Frío',6)">+</button></div>
+    </div>
+    <div class="menu-item" onclick="addToCart('Cerveza',4)">
+      <div class="menu-item-name">Cervezas</div>
+      <div class="menu-item-desc">Medalla, Heineken, Corona</div>
+      <div class="menu-item-footer"><span class="menu-item-price">desde $4.00</span><button class="add-btn" onclick="event.stopPropagation();addToCart('Cerveza',4)">+</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEÑAS -->
+<section id="resenas">
+  <div class="resenas-header">
+    <h2>Lo que dicen<br>nuestros clientes</h2>
+    <div class="stars">★★★★½</div>
+  </div>
+  <div class="resenas-track">
+    <div class="resena-card">
+      <div class="resena-quote-bg">"</div>
+      <p class="resena-text">"He visitado por más de 20 años. La vista, el servicio y la calidad son espectaculares. Reserva mesa junto a la ventana para el atardecer — una experiencia que no se repite."</p>
+      <p class="resena-author">— Carlos R. · TripAdvisor</p>
+    </div>
+    <div class="resena-card">
+      <div class="resena-quote-bg">"</div>
+      <p class="resena-text">"Un lugar absolutamente mágico y la comida deliciosa. Sería cliente habitual si viviera aquí. El Mofongo es obligatorio — jamás lo he probado tan bueno."</p>
+      <p class="resena-author">— Jennifer M. · TripAdvisor</p>
+    </div>
+    <div class="resena-card">
+      <div class="resena-quote-bg">"</div>
+      <p class="resena-text">"La vista no tiene comparación. El Atlántico de frente y el Rio Mar abajo. La langosta con mofongo fue increíble."</p>
+      <p class="resena-author">— David K. · Yelp</p>
+    </div>
+    <div class="resena-card">
+      <div class="resena-quote-bg">"</div>
+      <p class="resena-text">"Festejé mi cumpleaños 50 aquí. El mofongo de mariscos fue glorioso. Servicio excelente por nuestra mesera Iris Mar."</p>
+      <p class="resena-author">— Myrna T. · TripAdvisor</p>
+    </div>
+    <div class="resena-card">
+      <div class="resena-quote-bg">"</div>
+      <p class="resena-text">"Excelente servicio. Tienen una salsa picante casera que va bien con absolutamente todo. No salgas sin pedirla."</p>
+      <p class="resena-author">— Michael D. · TripAdvisor</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA RESERVA -->
+<section id="cta">
+  <div class="cta-inner">
+    <h2>Reserva tu mesa<br>en la <em>terraza</em></h2>
+    <p>Llámanos, escríbenos por WhatsApp o usa nuestro formulario. Abierto lunes a domingo 11 AM – 11 PM.</p>
+    <div class="cta-btns">
+      <a href="tel:7878874303" class="btn-sky">📞 (787) 887-4303</a>
+      <a href="tel:7873990766" class="btn-outline-sky">📞 (787) 399-0766</a>
+      <a href="#" class="btn-outline-sky" onclick="openReserva(event)">📅 Reservar Mesa</a>
+      <a href="https://wa.me/17875566568" target="_blank" class="btn-outline-sky">💬 WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- UBICACION -->
+<section id="ubicacion">
+  <div class="ubicacion-grid">
+    <div class="ubicacion-info">
+      <div class="intro-label">Cómo llegar</div>
+      <h2 style="font-size:clamp(2rem,3.5vw,3rem);font-weight:300;color:var(--navy);margin-bottom:32px">Encuéntranos<br>en Río Grande</h2>
+      <div class="info-row">
+        <div class="info-icon">📍</div>
+        <div>
+          <div class="info-label">Dirección</div>
+          <div class="info-value">Carr. 968 Km 2.2, Bo. Las Coles<br>Palmer, Río Grande, PR 00745</div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">📞</div>
+        <div>
+          <div class="info-label">Teléfonos</div>
+          <div class="info-value"><a href="tel:7878874303">(787) 887-4303</a> · <a href="tel:7873990766">(787) 399-0766</a></div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">💬</div>
+        <div>
+          <div class="info-label">WhatsApp</div>
+          <div class="info-value"><a href="https://wa.me/17875566568" target="_blank">+1 (787) 556-6568</a></div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">🕐</div>
+        <div>
+          <div class="info-label">Horarios</div>
+          <div class="info-value">Lunes – Domingo · 11:00 AM – 11:00 PM<br><span style="color:var(--blue);font-size:.82rem">🎵 Música en vivo los fines de semana</span></div>
+        </div>
+      </div>
+      <div class="social-btns">
+        <a href="https://www.instagram.com/terraza_montemar1" target="_blank" class="btn-social">Instagram</a>
+        <a href="https://facebook.com/TerrazamontemarRG" target="_blank" class="btn-social">Facebook</a>
+        <a href="https://wa.me/17875566568" target="_blank" class="btn-social">WhatsApp</a>
+      </div>
+    </div>
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.8!2d-65.770!3d18.384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c0368b2f6a61a1d%3A0x7d9ff6c0e1cde5a3!2sTerraza%20Montemar!5e0!3m2!1ses!2sus!4v1" loading="lazy" allowfullscreen title="Mapa Terraza Montemar"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-grid">
+    <div class="footer-logo">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABwlBMVEX///8AAADlNjH8///BwcH19fXr6+v8/Pz5+fmJiYn//v9KSkr29vbnNTHkNzF6enotLS3KysqCgoKoqKjl5eXDw8NsbGyysrKXl5fX19dmZmZXV1fR0dE8PDxeXl50dHT/4yX/wTy3t7dDQ0MYGBj/qDuHh4clJSULCwuWlpbd3d02NjZHR0egoKD+xTbFa2fkko7kLyT35uPmQjrrc2vpZF7fmJLrVU/hMijugn3gtbPdUkzkh4L/2ir/zTX9uT3+fzDWcGnjqKPeIhXy6dzbZ2Xv1tD44eLtxszns7jZQzvvwr3UXVDoMCnmsKrSMCDaZlnnXlXkREHXRzIlHRJRJSvbe3jThYGyTEaOPzpSExg9IiXNTEerTU5nRUTwe3XOWlv1l5eWYl6FQ0PBiYR4UFYaBgRCMDDbiH9CIiH9qKfYyNDbFADlWEhWOz1rPjp+PTj3qqSWcXH1kom5jIqvZWLxzcTTeWqcRzuliYL9/ev475f36VD66Wzy6K/1y1DUbElOAADww2vBi3zwuJn/sKvwwZHNqaeOX1n7zVb43K//mziWenrvgz74YyHyzaf/aC3qXzj9Zy3+SyiaKCZ5LiZkdVlwAAAR/0lEQVR4nO2c/UPbRprHZzwWko0l8As22IBzhgKB0Fjym4zcF0tgqI0NplfS7rblaNombUmzDht32+21+9Je9za9bnZ79//e84wkXq4l26QxNNx8fsDS6G2+fp6Z55nRGEIEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKB4P8BYcb/hC+6HoODMaWcX+U6LyvymuMEGhddiwEQZgBYMLKmq6amt2AH9tilMqayvvGKnW/q5nazberbKxuNhiFfdKWeBkwGWxmt/FpBdxxdN1XHkDbbqgl7jt6s2w2ZMVl5lnseJm3krS29rWoBRG2XWDiyqQa8PV238uvs2fTVMLQxJq3UTacdUFXVdEWppg02XTVNEKyqmqZqbd3pdgzvgmcKcL7W2pZjqmpAQ1yBqgn9qMxsx933VDtOs75inJ8p5aETPPFdlF7T1FzfPKlwSwJrEblp8n0toPG/pmk6ZvXcgsgEPWbqSW6AoaHT1HYKp9C4wmaEn2JzhRq477Ep21vbG+Rc7HhS4cyT3cK4USmVul1rZ2ensGNZlQp8FnjTayp4nBm6yo336rG3aqbZdurG01RyFhPxxBCqzEpDE1cnj615lX+OZqNwTsItzMS5SeQw+VfYe61YrO/WajeOvp/XQZmFG290KxVXInrpEBh5E7se9dWGfqJBQkHAKStMPo84OQTVGuFbfm2v8TJOEoqn/Z1Fgr1K9Ve4vbvXbaqFpn/o18VSt9JdgK0PcKsAjVF1oLGtN8Is3waFjm2c6HJUKNJM3WqcS5dzrHCU0oXFiYlclihQNh2EfbpMyAh8jOGfeTyp3EQdFKyrtJpvvvbWW9ffht3re8Vu5d+oq71U2QEjajpEC6UM7VSHltiWGo7XECGV0zabOrRM08mDGQeeA5xW6JahwiyRZ3nrRHEKCblGNCqvcx1ZMGetuVOplHbfp/TWfhVM9wY/8k61iEYEQ1mQjK4NsT4oNC2y4fitULclFtlFy2oOmHHQAs9UCA6a5nZDhRLBVjpGSKdykyYzsE1Y/g50K93iTdh5d7+6V+q+Rt9DtfkqGBHcVHMg675tE2yA7RppcS+FyN80MBPfNSG+qAVtq0MG3av+QGFQ8myIR4Z9G2ZdG+6XPqDxFGznesVSpVLpFmH71odgw/LGAv0IzyqDEXd4S4R4US6wDehM22VwVvRQR+9KoM+oQaGqYRh1aoNujKcU0vl5NBgqHF7GBpdyFcYzXsTcrVOawEve3kdvrHS5CXu1joShh0Rhb7y117V4TNTrxD5ouQqJDR9OvrMLLY/YW20TzNm+zXO5bWmwVjytkFJfISdEXIXIEmY91bforKJcA2t/WAOFd7pw4OPeYQsOXaUZWeJd8WoHGiKGCLNsO2stXVX1PCgM6GWQAo3TPtBw7KHqHctslkyzOdjQeNpLo8Hg9BBXuOCX+wp56Nq764t/dx86zcpvcOswj4425R8ZgjzcfhXdUDULbbMEG+1dUtYDTYULbBw012q1etPRtwqW0YGB8tZAs7izeppYlpvTixY8cITlSPF9Xwe6aWkNTfjhIVZQ8g/QON4iYjcdU3NjOwSLTdbT9Rq/eXjFM5nRsRxzi+cDW4PsUs+MFpjMXPUUyuiXkIWuX8dmONS6BWW92l7xLm+FH+I1QTobgfzd7Z2gtyRK582DNpcHbmpKfUfPcxkyc2fgwJ6kb2GwhA7WHKAVf6hQmpB5X5pxXZP3pWOubfpvQP1Zq3ePO2e1jrb8uqPAJdDZxvDiJHdTGALiTr/WhPH9ml0ynb7htGuuoWB0CEdZpJO3W+s1083LzcFZMXGkEAI8HZ2H3nQiAltpHgLBiK63gvzZMGl9QMeZfbhfRmmH1ffgY3Z+dHQecpxZGsSbBH03JXwCSjYa0Czl/MGuoZvNk1koax3o0N8UvFxO0wbW3eSob7qjhsSrSQkB16STPF0N8tOS5LeU3qvuVQ9rWPhN4+gKGonzTM4brkhHMrgzglPajrGl6qdccQNTcVXzJz10Sx6QFaH3DAYxECwGPaJuWYIk+IdbJMPfXOL+/fvXi8W9vfr9e6lgNOFfERyTc8EgZubuNZM/eAprdWq6WTsR+CTr1FBDLUAzvfhpKqVYKpY4vcjjXcmYZGhtxzihUDMDqnasEBJy4+Knb9jqqquw/wTXskbz4JMT+zZEkyNQpWM/vZo+MWz9zuu/e+t3n6YSXkE0B6SUn3BpWGZGuXzsiGHWuqOrGk56+ApXBlPpxwC6+dqd13m2E/KK6MLCrLvDwvJnAM7pR77JdzbWjQh2Mo+6H+vftszCDp/3gJi4+VO+qMECjmbuWAuAnxqM0dlZN0ywz37/+QtXrlz59y8aBmMrVrPZtLZr5dbikCQx6QTK8WZYYkMfletWATWadYMX4m0j/ET+BHnoePscFIbrGijk4cHtLpMU5Y5BnvIFyuN8+Ye13rdwxt1KpVnY+SOlv3qXnkCZP45K7kzYdKe7YxXy8eP78vK0+9CMe+7M1Sef7nwM+nqhUJ+lmBrM4b7sPh0U/v7KMZ//oYRDDvrbXnWt9BZ8fnNSIYkfb3rDGSbVdnb6XAqfKfHmidxnBo9OHxu4PkYsTbOMBRrDVMZ9+sIof/QXV07y+V4VazSK475FSieiyVxwGa8J5uJLBMfPmU/fycVHZc9AQcLyXXeWZ/iEKp4j8cxqNMUHLoO2osxecVS9H4Zh8YznTmmaxpm4sc9eOKXwyp94zkP/cthpfARnSsZ6589YUX4fVPh2bwPv6CkEfzT4UNpX6A7YskcKl1xnXR6wQkI2A+YnOO5IoUFifAgSxCcHj034AufLsutXNw6rMBi5Xy1+0vnIdcGwrzDCe9kMzWCzlozy3q+587sKZykmw+6I1FOIqf/IgPWxhh5wGgwVDrnNBHLVFprz0y89ZciLL774/PNfwVAfDtzqHd6g9HpvPYzeigplo/UOKvx6fX19cX192J3WurdfvU2583OFcO7isN/wPIX4pYYeXcGfT71tWgQVxnkPMbaeoR9/fYsrRF2c559//l+A/4BCnEe99yH0ozf283YHe5v5fme/WkWFt+7d+8v716t7t+jbkMzTj3utTyFz9xVCX8QVZX2FUzzxd1P7gcGYsRWAUbqrEJ//Xg8U8LFwDoV5gLyXXkKF33awUjYqrFb39q5jT9PbP6zuveP3jTdqh6Bww+1DrtHYpK8wA6MYye9Nj142+OFjUPA3gWqptaFgi8dB5fvw7ScI96b/5IZzeQl47q9wkvEpuqNN6Z8PPYXvdxrgnMt+jScVrgX7qhz4fdS3IcSg9DKf6YueVHh1sALBhm+2AwHdacDo+FvlFTTdLJ0mrsI/cV0+zz14sAqGNjp40rfopdW9IlfIB7kpz/9wtIUK0QHTcW8qEhVGj6w24ikcxWCxOGiFhgNjHbPOVqCJ5Q9dV8t5Cv/63DEPHjx4+b8+g5N6Pa9HffdIYcRXmPTuigpxQoFOgRpfYehIIfUUzmBPOj1oheCkplNntoXdf3mdVyDiKZQfHPPyyy9/9xWDJtrr9d7jZ33T9xUqP6YQXx5wj/QVLrkzPlOum7p96fw5GLF8YNb7jTVtd5be7Cl8hgObvtur/+3lIx4+/O7vCqH0nf39/TzPYSdZx1XopmRHCpWgqzDomctTmPDCxLLrpq7C+ImvZTCwsLSxurGm67vQJ9yTGX8kOClXOkbYV989/MfDfwAPv/9eXyUtUHhYrR3e5wpJo/h/FM4ujY6O0nH4ftLu3CWaDV1xhscKbuvFY92jRF4YsBFx+nOlpJt6nrzr9hNDrpMSb7DIvvre584q6UOcv7tXrVYPcUI1RSLF4n03KJDjOXR3lgtVJ/m2++ZZxik/96G4O07G3VK06NIgB1FSvuBobTNP+v/9P8kY1nQ8hmliNBYKheYUXDlTdfV1FNKo3r958269CJTnQnNXFdYq3fzN3bsxNLqEV3BiClwdm4DBEhTJRJmbg7JoDsr4N5HAE2MJfuYYUWAvFn9kHX8Wq00d30u362xzp3DGxCZTVvsNnEwyIPyBuFKpW8r7kxYr3VJpY3D1+5mEGak7WkCzbjudllawzpiZ4IsScdoiX0Jx3W7F6pCwOwnMyGrnHN72PjFsA9IZTW/tFFjdLFhnzGpydeEwMSrdCmDtdBvMf7/L31Rc/GzoWYTZZjug6rfLTjniBAr/ZPqd2Ts7fHIpH2H+LPaPrin5YaF8xpmDp+GoqmYapmPgy3jTfrS71XGC0Nxd5W9D3SJleGYqA11KfGZmZkoh0jSdglienhq+tgQD+SD+IVenCJnLuOfwKZLoUgr+SqNxkpiPkrGla8MzmUEpXMP3tfmOY5HamgHD4KFHSAyzum4286cX5yl0ODQFXf44zWaTCsSLVAYiQixNp9JRTBowkxmBkvQs9NF0boS/25nmcwIwxpgYokEymZ6h6UENgY0tFRSud9u3yQ35E2iR249c02zYGwoY77TCOCTYQ1D7eHwCE89MigcECHcY2dMYy2OgMDmPqQyUxzDgpjFI4ihqkSc5y3RALsyYrePimFXdLEPU09t13cmzx3sYZC3zaKhxOr+A5lmep+hwMh8RxWgCZ+5ing2X6SzOT8LXkFhIosLx2VFP4WO+K/mpMLYNw6Z2vqUHLFne0s1q+cApP17Pr9DpYRhLgsKxaFAmoZiUxvyGK3RnJGVI1uJRzOGWaYhnoDyllUBhboIOWKFkqgFTb+X1QLuJk/C6UXMcmz3Oiu0IHZfpqOzmZRGeauJYSMZ8L05ziznwYiUD6WoCczf4IvB9ZWoxCF4swaE4n1gcP34t+ZQVNpwAKFyv6wGtratN26mH6yjxccKbpBBFgsTMm7aXJxJ+MYlggYTmSfDMWoF9OMktltxzJNk7MBg6ECF0i1n8XVjAMeoHDbmk6zYZ1Dvbc8fWdaduGPpaVdfa24WOtLXNIhZa8VL8iIIP7nGtXfnArtXMdq28xloHKyRi6dDdXA4rsr6zCk2u5vTfNAqtbcMxSHlriEiuxIuu3dOAGQ2M3vWt9bW+Rd5k9TxjayWZSZttp8d+wen04yGz5maj1rFI02g4BpOa9YhUN1Vn5RewfOLpwCSn1i/nNVJvEWubQQR5dUtvt3XduDQKGwedjp13pJbFOgdVo26azs520dIfM7n55QJdad+2bafcOcjXdHPLcaxXcHLGOJdXz+cBW3OMst3RzULbcUxdX8MFNewZ/SXaj6I0dals9x1V36zl8+f506zzwnA0pVxumE3DW4t30RV66vSdgGw3Lf2XsC5rMHScgGLr6qsDS+8vHOhjIrdhPHH5vNOnoztGV28O/jdKF0bHMcum8wRrLp8Z+K9C6pfXR0Gho5rmpclBf4wGKMxfZhNCTtOGke+lGO+egbTVPuul2iXBcPT8RddhsChNp3+5bcg6+uVN2DjMLl6aGZkzMNYvi8JQhERChIzn+F4y5xWnrmWHIFaE8H3f2HAa5y5C3prkxenMnEJIbDoTJ2Tan9VYzGQmCYmnSGiMyFCa4AuaYnwlfnA47f0gJTk9PEEmpzPwRCWjkOVMehjfUM3E4FlXUyQy/PQnSSbwl/dThKTH3T13FRMJ0rHkMn9bCY+mI+MpvmLIPTZJgzMjhEzFchNwzKt6hI7HhxUyFyLDKSJD6QQ/ewrfIS3S3Jy/JiieGyLB2cnRHFFohEyM05xElmejw1mowjLc5ekrVMBoiSh8udxA2dC8+7OKOVx/LJPlZCaFcucX4YvODqc8hWRsia9vA3V+lSYpvyDEV0TJUOoqnOHvAaePzluYn4X7LYwvRLlCEA+F4At4Of7Xhh/+Bu6pkZxejvIXzO663ChNZa7yn2CClpHcTJIvyZryxMRHY2CeLFxBaGiZ112hofEp+ZQN4+DEM9nlCZARz866j6HRIVQ4PUVchfx7iNPcUmxw0jziWWiC0Rg0H3cpWXB6ToIdOQJNcHI6myCLWVlKcjGLyeQ4NptsErSMZL0mlkgmwdCpHBmPEjmL7TCZxZPSYMXJ6RHP1Fn8nAyR5ASR0/CkBF+KwL9NgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAsE/438BXEekmbDS7S4AAAAASUVORK5CYII=" alt="Terraza Montemar">
+      <p>La Casa del Chillo Frito<br>Río Grande, Puerto Rico · Desde los años 90</p>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <a href="tel:7878874303">(787) 887-4303</a>
+      <a href="tel:7873990766">(787) 399-0766</a>
+      <a href="https://wa.me/17875566568" target="_blank">WhatsApp: +1 (787) 556-6568</a>
+      <p style="margin-top:8px">Lun–Dom · 11 AM – 11 PM</p>
+    </div>
+    <div class="footer-col">
+      <h4>Menú rápido</h4>
+      <a href="#intro">Nosotros</a>
+      <a href="#menu">El Menú</a>
+      <a href="#resenas">Reseñas</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="https://www.instagram.com/terraza_montemar1" target="_blank">@terraza_montemar1</a>
+    </div>
+  </div>
+  <hr class="footer-divider">
+  <div class="footer-bottom">
+    <span>© 2025 Terraza Montemar Restaurant · Todos los derechos reservados</span>
+    <span>Río Grande, Puerto Rico</span>
+  </div>
+</footer>
+
+<!-- CART BUTTON -->
+<button id="cart-btn" onclick="toggleCart()">
+  🛒
+  <span id="cart-count">0</span>
+</button>
+
+<!-- CART OVERLAY -->
+<div id="cart-overlay" onclick="toggleCart()"></div>
+
+<!-- CART DRAWER -->
+<div id="cart-drawer">
+  <div class="cart-header">
+    <h3>Tu Orden</h3>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-body" id="cart-body">
+    <p class="cart-empty">Tu orden está vacía.<br>Agrega platos desde el menú.</p>
+  </div>
+  <div class="cart-footer" id="cart-footer" style="display:none">
+    <div class="cart-total">
+      <span>Total estimado</span>
+      <span id="cart-total-price">$0.00</span>
+    </div>
+    <button class="btn-whatsapp" onclick="sendOrderWhatsApp()">Enviar Orden por WhatsApp 💬</button>
+  </div>
+</div>
+
+<!-- RESERVATION MODAL -->
+<div id="resv-modal">
+  <div class="modal-overlay" onclick="closeReserva()"></div>
+  <div class="modal-box">
+    <button class="modal-close-btn" onclick="closeReserva()">✕</button>
+    <h3>Reservar una Mesa</h3>
+    <p class="modal-sub">Te confirmamos por WhatsApp. Solo toma 2 minutos.</p>
+    <div class="form-row">
+      <label>Nombre completo</label>
+      <input type="text" id="resv-name" placeholder="Tu nombre">
+    </div>
+    <div class="form-grid2">
+      <div class="form-row">
+        <label>Teléfono</label>
+        <input type="tel" id="resv-phone" placeholder="(787) 000-0000">
+      </div>
+      <div class="form-row">
+        <label>Personas</label>
+        <select id="resv-guests">
+          <option>1 persona</option>
+          <option>2 personas</option>
+          <option selected>3–4 personas</option>
+          <option>5–6 personas</option>
+          <option>7–8 personas</option>
+          <option>9+ personas</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-grid2">
+      <div class="form-row">
+        <label>Fecha</label>
+        <input type="date" id="resv-date">
+      </div>
+      <div class="form-row">
+        <label>Hora preferida</label>
+        <select id="resv-time">
+          <option>11:00 AM</option>
+          <option>12:00 PM</option>
+          <option>1:00 PM</option>
+          <option>2:00 PM</option>
+          <option>3:00 PM</option>
+          <option>4:00 PM</option>
+          <option>5:00 PM</option>
+          <option>6:00 PM</option>
+          <option>7:00 PM</option>
+          <option>8:00 PM</option>
+          <option>9:00 PM</option>
+          <option>10:00 PM</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <label>Ocasión especial o peticiones</label>
+      <textarea id="resv-notes" placeholder="Cumpleaños, aniversario, alergia, mesa con vista..."></textarea>
+    </div>
+    <button class="btn-resv-submit" onclick="sendReservaWhatsApp()">Reservar vía WhatsApp 💬</button>
+  </div>
+</div>
+
+<script>
+// ── NAV SCROLL ──
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60);
+});
+
+// ── MOBILE MENU ──
+function toggleMenu(){
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('mobile-menu').classList.toggle('open');
+  document.body.style.overflow=document.getElementById('mobile-menu').classList.contains('open')?'hidden':'';
+}
+function closeMenu(){
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+// ── MENU TABS ──
+function showTab(id,btn){
+  document.querySelectorAll('.menu-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.menu-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ── CART ──
+let cart=[];
+function addToCart(name,price){
+  const existing=cart.find(i=>i.name===name);
+  if(existing){existing.qty++;}
+  else{cart.push({name,price,qty:1});}
+  updateCart();
+  if(!document.getElementById('cart-drawer').classList.contains('open'))showCartPulse();
+}
+function removeFromCart(name){
+  const idx=cart.findIndex(i=>i.name===name);
+  if(idx===-1)return;
+  if(cart[idx].qty>1){cart[idx].qty--;}else{cart.splice(idx,1);}
+  updateCart();
+}
+function updateCart(){
+  const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const count=cart.reduce((s,i)=>s+i.qty,0);
+  document.getElementById('cart-count').textContent=count;
+  const btn=document.getElementById('cart-btn');
+  btn.style.display=cart.length?'flex':'none';
+  const body=document.getElementById('cart-body');
+  const footer=document.getElementById('cart-footer');
+  if(!cart.length){
+    body.innerHTML='<p class="cart-empty">Tu orden está vacía.<br>Agrega platos desde el menú.</p>';
+    footer.style.display='none';
+    return;
+  }
+  footer.style.display='block';
+  document.getElementById('cart-total-price').textContent='$'+total.toFixed(2)+' est.';
+  body.innerHTML=cart.map(i=>`
+    <div class="cart-item">
+      <div class="cart-item-info">
+        <div class="cart-item-name">${i.name}</div>
+        <div class="cart-item-price">${i.price>0?'$'+(i.price*i.qty).toFixed(2):'Precio de mercado'}</div>
+      </div>
+      <div class="cart-item-controls">
+        <button class="qty-btn" onclick="removeFromCart('${i.name.replace(/'/g,"\\'")}')">−</button>
+        <span class="qty-num">${i.qty}</span>
+        <button class="qty-btn" onclick="addToCart('${i.name.replace(/'/g,"\\'")}',${i.price})">+</button>
+      </div>
+    </div>`).join('');
+}
+function toggleCart(){
+  document.getElementById('cart-drawer').classList.toggle('open');
+  document.getElementById('cart-overlay').classList.toggle('open');
+  document.body.style.overflow=document.getElementById('cart-drawer').classList.contains('open')?'hidden':'';
+}
+function showCartPulse(){
+  const btn=document.getElementById('cart-btn');
+  btn.style.transform='scale(1.25)';
+  setTimeout(()=>btn.style.transform='',300);
+}
+function sendOrderWhatsApp(){
+  if(!cart.length)return;
+  const lines=cart.map(i=>`• ${i.qty}x ${i.name}${i.price>0?' — $'+(i.price*i.qty).toFixed(2):' — precio de mercado'}`).join('\n');
+  const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const msg=`Hola Terraza Montemar! Me gustaría hacer un pedido:\n\n${lines}\n\nTotal estimado: $${total.toFixed(2)}\n\n¿Pueden confirmar disponibilidad?`;
+  window.open('https://wa.me/17875566568?text='+encodeURIComponent(msg),'_blank');
+}
+
+// ── RESERVATION ──
+function openReserva(e){e&&e.preventDefault();document.getElementById('resv-modal').classList.add('open');document.body.style.overflow='hidden';}
+function closeReserva(){document.getElementById('resv-modal').classList.remove('open');document.body.style.overflow='';}
+function sendReservaWhatsApp(){
+  const name=document.getElementById('resv-name').value.trim()||'(no indicado)';
+  const phone=document.getElementById('resv-phone').value.trim()||'(no indicado)';
+  const guests=document.getElementById('resv-guests').value;
+  const date=document.getElementById('resv-date').value||'(fecha por confirmar)';
+  const time=document.getElementById('resv-time').value;
+  const notes=document.getElementById('resv-notes').value.trim()||'Ninguna';
+  const msg=`Hola Terraza Montemar! Quisiera reservar una mesa:\n\n👤 Nombre: ${name}\n📞 Teléfono: ${phone}\n👥 Personas: ${guests}\n📅 Fecha: ${date}\n🕐 Hora: ${time}\n📝 Notas: ${notes}\n\n¡Gracias!`;
+  window.open('https://wa.me/17875566568?text='+encodeURIComponent(msg),'_blank');
+}
+
+// ── SET MIN DATE FOR RESERVATION ──
+const dateInput=document.getElementById('resv-date');
+if(dateInput){const today=new Date();dateInput.min=today.toISOString().split('T')[0];}
+</script>
+</body>
+</html>

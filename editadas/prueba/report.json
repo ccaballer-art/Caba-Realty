@@ -1,0 +1,56 @@
+{
+ "IMG_7451_still": {
+  "profile": "Rec. ITU-R BT.2100 HLG",
+  "size_in": [
+   2576,
+   1450
+  ],
+  "tilt": {
+   "vert_centre": -1.5064584643322405,
+   "vert_all": 4.790106754243652,
+   "n_vert": 54,
+   "keystone": 10.117613347761633,
+   "horiz": 1.0763417954390206,
+   "n_horz": 31
+  },
+  "rotate_deg": 1.51,
+  "wb_gains": [
+   "1.0049",
+   "1.0011",
+   "0.9747"
+  ],
+  "cast_in": 0.007,
+  "key_in": 0.2182,
+  "gain": 1.068,
+  "mid_gamma": 1.0,
+  "black_shift": 0,
+  "local_max_dev": 0.023040777072310448
+ },
+ "IMG_7468": {
+  "profile": "Display P3",
+  "size_in": [
+   2016,
+   1512
+  ],
+  "tilt": {
+   "vert_centre": 0.6628795026264953,
+   "vert_all": 0.35129599094761943,
+   "n_vert": 55,
+   "keystone": 6.02910885789035,
+   "horiz": 1.8468466065048403,
+   "n_horz": 77
+  },
+  "rotate_deg": 0.0,
+  "wb_gains": [
+   "1.0113",
+   "0.9924",
+   "1.042"
+  ],
+  "cast_in": 0.046,
+  "key_in": 0.3998,
+  "gain": 1.169,
+  "mid_gamma": 1.0,
+  "black_shift": 0,
+  "local_max_dev": 0.02128860354423523
+ }
+}
